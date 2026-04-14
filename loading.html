@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sakthi Dental Clinic</title>
+
+  <style>
+    /* ===== LOADING SCREEN ===== */
+    #loading-overlay {
+      position: fixed;
+      inset: 0;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    #loading-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    /* Logo Image */
+    .loader-img {
+      width: 260px;
+      height: auto;
+      object-fit: contain;
+      animation: zoomFade 1.5s ease;
+    }
+
+    /* Loader bar */
+    .loader-bar {
+      width: 180px;
+      height: 4px;
+      background: #eee;
+      border-radius: 10px;
+      margin-top: 20px;
+      overflow: hidden;
+    }
+
+    .loader-bar::after {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #3b5bdb, #ff0000);
+      animation: load 2.5s linear forwards;
+    }
+
+    @keyframes load {
+      to { width: 100%; }
+    }
+
+    @keyframes zoomFade {
+      from {
+        opacity: 0;
+        transform: scale(0.7);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Dummy page content */
+    .content {
+      padding: 50px;
+      text-align: center;
+      font-family: Arial;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== LOADER ===== -->
+  <div id="loading-overlay">
+    <img src="images/sdc-logo(2).png" alt="Sakthi Dental Clinic" class="loader-img">
+    <div class="loader-bar"></div>
+  </div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <div class="content">
+    <h1>Welcome to Sakthi Dental Clinic</h1>
+    <p>Your smile is our priority</p>
+  </div>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loading-overlay");
+
+      setTimeout(() => {
+        loader.classList.add("hidden");
+      }, 3000); // 3 seconds
+    });
+  </script>
+
+</body>
+</html>
+<div id="loading-overlay">
+  <img src="images/sdc-logo(2).png" alt="Sakthi Dental Clinic" class="loader-img">
+  <div class="loader-bar"></div>
+</div>
